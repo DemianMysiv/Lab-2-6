@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include <string>
+#include "Employee.h"
 
 class Project {
 private:
@@ -18,4 +19,5 @@ public:
     void changeFinanciaton(double change);
     void profit();
     void getStatusOfProject();
+    void assignManager(Employee manager);
 };

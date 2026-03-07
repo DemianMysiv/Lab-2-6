@@ -25,3 +25,10 @@ void Project::profit() {
 void Project::getStatusOfProject() {
     cout << "Статус проєкту " << title << " | Бюджет: " << budget << " | Тижнів: " << durationweeks << endl;
 }
+
+void Project::assignManager(Employee manager) {
+    cout << "\n*** Призначення на проєкт: " << title << " ***" << endl;
+    cout << "Керівник проєкту:" << endl;
+    manager.showProfile(); // Клас Project викликає метод класу Employee!
+    cout << "**************************************\n" << endl;
+}
