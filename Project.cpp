@@ -10,6 +10,12 @@ Project::Project(string nazva, double koshty, int duration, bool status)
 Project::Project(string zagolovok, double moneycount) 
     : title{ zagolovok }, budget{ moneycount }, durationweeks{ 5 }, isActive{ true } {}
 
+Project::Project(const Project& other) 
+    : title(other.title), budget(other.budget), 
+      durationweeks(other.durationweeks), isActive(other.isActive) {
+    cout << "Викликано конструктор КOПІЮВАННЯ для Project: " << title << endl;
+}
+
 Project::~Project() {
     cout << "Спрацював деструктор класу Project" << endl;
 }

@@ -22,6 +22,8 @@ int main() {
     Project prj1;
 
     prj1.getStatusOfProject();
+    Project prj2(prj1); 
+    prj2.getStatusOfProject();
 
     return 0;
 }
