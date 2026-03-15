@@ -1,26 +1,50 @@
 #include "Department.h"
+#include <cstring>
+#include <cctype>
 
 using namespace std;
 
-Department::Department() : Department{ "Marketing", 0, 1, "Standard" } {
-    cout << "Викликано конструктор за замовчуванням Department" << endl;
+Department::Department() : Department("Marketing", 0, 1, "Standard") {}
+
+Department::Department(const char* name, int count) : Department(name, count, 1, "Standard") {}
+
+Department::Department(const char* name, int count, int fl) : Department(name, count, fl, "Standard") {}
+
+Department::Department(const char* name, int count, int fl, string res) 
+    : employeecount{ count }, floor{ fl }, resources{ res } {
+    deptName = new char[std::strlen(name) + 1];
+    std::strcpy(deptName, name);
 }
 
-Department::Department(string name, int count) : Department{ name, count, 1, "Standard" } {
-    cout << "Викликано конструктор Department з 2 параметрами" << endl;
-}
-
-Department::Department(string name, int count, int fl) : Department{ name, count, fl, "Standard" } {
-    cout << "Викликано конструктор Department з 3 параметрами" << endl;
-}
-
-Department::Department(string name, int count, int fl, string res) 
-    : deptName{ name }, employeecount{ count }, floor{ fl }, resources{ res } {
-    cout << "Викликано основний конструктор ініціалізації Department" << endl;
+Department::Department(const Department& other) 
+    : employeecount{ other.employeecount }, floor{ other.floor }, resources{ other.resources } {
+    deptName = new char[std::strlen(other.deptName) + 1];
+    std::strcpy(deptName, other.deptName);
 }
 
 Department::~Department() {
-    cout << "Спрацював деструктор класу Department" << endl;
+    delete[] deptName;
+}
+
+Department Department::operator-() const {
+    char *buff = new char[std::strlen(this->deptName) + 1];
+    std::strcpy(buff, this->deptName);
+    for (size_t i = 0; i < std::strlen(buff); i++) {
+        buff[i] = std::tolower(buff[i]);
+    }
+    Department temp{buff, this->employeecount, this->floor, this->resources};
+    delete[] buff;
+    return temp;
+}
+
+Department Department::operator+(const Department &rhs) const {
+    size_t buffSize = std::strlen(this->deptName) + std::strlen(rhs.deptName) + 1;
+    char *buff = new char[buffSize];
+    std::strcpy(buff, this->deptName);
+    std::strcat(buff, rhs.deptName);
+    Department temp{buff, this->employeecount + rhs.employeecount, this->floor, this->resources};
+    delete[] buff;
+    return temp;
 }
 
 void Department::relocate(int newfloor) {
@@ -35,4 +59,9 @@ void Department::hireEmployee(int addedcount) {
 
 void Department::setResources(string newResources) {
     resources = newResources;
+}
+
+void Department::display() const {
+    cout << "Відділ: " << deptName << " | Працівників: " << employeecount 
+         << " | Поверх: " << floor << " | Ресурси: " << resources << endl;
 }

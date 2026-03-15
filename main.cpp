@@ -52,12 +52,24 @@ int main() {
     boss.showProfile();
     std::cout << "Зарплата: " << boss.getSalary() << std::endl; */
 
-    std::cout << "Проєктів на старті: " << Project::getTotalProjects() << std::endl; 
+/*     std::cout << "Проєктів на старті: " << Project::getTotalProjects() << std::endl; 
 
     Project p1("Альфа", 10000, 10, true);
     Project p2("Бета", 5000);
 
     std::cout << "Проєктів зараз: " << Project::getTotalProjects() << std::endl; 
+ */
+    Department firstDep("MARKETING", 15, 2, "Computers");
+    Department secondDep("SALES", 20, 3, "Phones");
+
+    firstDep.display();
+    secondDep.display();
+
+    Department lowerDep = -firstDep;
+    lowerDep.display();
+
+    Department megaDep = firstDep + secondDep;
+    megaDep.display();
 
     return 0;
 }

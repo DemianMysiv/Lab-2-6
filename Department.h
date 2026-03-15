@@ -5,19 +5,24 @@
 
 class Department {
 private:
-    std::string deptName;
+    char* deptName;
     int employeecount;
     int floor;
     std::string resources;
 
 public:
     Department();
-    Department(std::string name, int count);
-    Department(std::string name, int count, int fl);
-    Department(std::string name, int count, int fl, std::string res);
+    Department(const char* name, int count);
+    Department(const char* name, int count, int fl);
+    Department(const char* name, int count, int fl, std::string res);
+    Department(const Department& other); 
     ~Department();
+
+    Department operator-() const;
+    Department operator+(const Department& rhs) const;
 
     void relocate(int newfloor);
     void hireEmployee(int addedcount);
     void setResources(std::string newResources);
+    void display() const;
 };
