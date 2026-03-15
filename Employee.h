@@ -22,8 +22,8 @@ public:
 
     void promote(std::string newPosition);
     void updateSalary(double bonus);
-    void showProfile();
-    double getSalary();
+    void showProfile() const;
+    double getSalary() const;
     int WhoisthisP(const Employee &other);
 
 };

@@ -40,12 +40,17 @@ int main() {
     prj2.getStatusOfProject();   */
 
 
-    Employee emp1{"Іван Мельник", 101, 15000.0, "Менеджер"};
+
+/*     Employee emp1{"Іван Мельник", 101, 15000.0, "Менеджер"};
     Employee emp2{"Петро Петренко", 102, 12000.0, "Розробник"};
 
 
     emp1.WhoisthisP(emp2);
- 
+  */
+
+    const Employee boss{"Віктор Петрович", 1, 50000.0, "Генеральний директор"};
+    boss.showProfile();
+    std::cout << "Зарплата: " << boss.getSalary() << std::endl;
 
     return 0;
 }

@@ -71,11 +71,11 @@ void Employee::updateSalary(double bonus) {
 }
 
 
-void Employee::showProfile() {
+void Employee::showProfile() const {
     cout << "Співробітник: " << fullName << ", Посада: " << position << endl;
 }
 
-double Employee::getSalary() {
+double Employee::getSalary() const {
     return *salary;
 }
 
