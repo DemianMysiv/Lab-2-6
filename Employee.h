@@ -24,5 +24,6 @@ public:
     void updateSalary(double bonus);
     void showProfile();
     double getSalary();
+    int WhoisthisP(const Employee &other);
 
 };

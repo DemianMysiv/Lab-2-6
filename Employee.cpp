@@ -78,3 +78,13 @@ void Employee::showProfile() {
 double Employee::getSalary() {
     return *salary;
 }
+
+int Employee::WhoisthisP(const Employee &other) {
+    if (this == &other) {
+        cout << "This is the same employee" << endl;
+        return 1;
+    } else {
+        cout << "These are different employees" << endl;
+    }
+    return 0;
+}

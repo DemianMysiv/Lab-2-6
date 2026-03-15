@@ -14,9 +14,9 @@ int main() {
     Employee emp2("DemyanMysiv", 797, 1000, "boss");
 
     emp1.showProfile();
-    emp2.showProfile(); */
+    emp2.showProfile();  */
 
-    Employee emp{"Іван Мельник", 101, 15000.5, "Менеджер"};
+/*     Employee emp{"Іван Мельник", 101, 15000.5, "Менеджер"};
     std::cout << "Зарплата першого співробітника: " << emp.getSalary() << std::endl;
 
     std::vector<Employee> vectorOfEmployees(1, emp);
@@ -25,9 +25,9 @@ int main() {
     vectorOfEmployees.push_back(Employee{"Олена Коваленко", 103, 16000.0, "Дизайнер"});
     vectorOfEmployees.push_back(Employee{"Сергій Сидоренко", 104, 14000.0, "Аналітик"});
     vectorOfEmployees.push_back(Employee{"Марія Мельник", 105, 17000.0, "Керівник"});
-    vectorOfEmployees.push_back(Employee{"Олексій Бондар", 106, 13000.0, "Тестувальник"}); 
+    vectorOfEmployees.push_back(Employee{"Олексій Бондар", 106, 13000.0, "Тестувальник"});  */
 
-/*     Department dep1;
+/*      Department dep1;
     Department dep2("buchalteria", 100);
 
     dep1.hireEmployee(50);
@@ -37,7 +37,15 @@ int main() {
 
     prj1.getStatusOfProject();
     Project prj2(prj1); 
-    prj2.getStatusOfProject(); */
+    prj2.getStatusOfProject();   */
+
+
+    Employee emp1{"Іван Мельник", 101, 15000.0, "Менеджер"};
+    Employee emp2{"Петро Петренко", 102, 12000.0, "Розробник"};
+
+
+    emp1.WhoisthisP(emp2);
+ 
 
     return 0;
 }
