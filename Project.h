@@ -10,9 +10,11 @@ private:
     double budget;
     int durationweeks;
     bool isActive;
+    static int totalProjects;
 
 public:
-    Project(std::string nazva = "Hacking", double koshty = 10000, int duration = 12, bool status = true);
+    Project();
+    Project(std::string nazva, double koshty, int duration, bool status);
     Project(std::string zagolovok, double moneycount);
     Project(const Project& other);
     ~Project();
@@ -21,4 +23,5 @@ public:
     void profit();
     void getStatusOfProject();
     void assignManager(Employee manager);
+    static int getTotalProjects();
 };

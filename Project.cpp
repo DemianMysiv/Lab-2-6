@@ -2,22 +2,39 @@
 
 using namespace std;
 
-Project::Project(string nazva, double koshty, int duration, bool status) 
-    : title{ nazva }, budget{ koshty }, durationweeks{ duration }, isActive{ status } {
+int Project::totalProjects = 0;
+
+Project::Project() : title{"Hacking"}, budget{10000}, durationweeks{12}, isActive{true} {
+    totalProjects++;
     cout << "Викликався конструктор за замовчуванням" << endl;
 }
 
+Project::Project(string nazva, double koshty, int duration, bool status) 
+    : title{ nazva }, budget{ koshty }, durationweeks{ duration }, isActive{ status } {
+    totalProjects++;
+    cout << "Викликано конструктор з 4 параметрами" << endl;
+}
+
 Project::Project(string zagolovok, double moneycount) 
-    : title{ zagolovok }, budget{ moneycount }, durationweeks{ 5 }, isActive{ true } {}
+    : title{ zagolovok }, budget{ moneycount }, durationweeks{ 5 }, isActive{ true } {
+    totalProjects++;
+    cout << "Викликано конструктор з 2 параметрами" << endl;
+}
 
 Project::Project(const Project& other) 
     : title(other.title), budget(other.budget), 
       durationweeks(other.durationweeks), isActive(other.isActive) {
-    cout << "Викликано конструктор КOПІЮВАННЯ для Project: " << title << endl;
+    totalProjects++;
+    cout << "Викликано конструктор копіювання для проєкту: " << title << endl;
 }
 
 Project::~Project() {
-    cout << "Спрацював деструктор класу Project" << endl;
+    totalProjects--;
+    cout << "Спрацював деструктор для проєкту: " << title << endl;
+}
+
+int Project::getTotalProjects() {
+    return totalProjects;
 }
 
 void Project::changeFinanciaton(double change) {
