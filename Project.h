@@ -18,6 +18,8 @@ public:
     Project(std::string zagolovok, double moneycount);
     Project(const Project& other);
     ~Project();
+    friend std::ostream &operator<<(std::ostream &os, const Project &obj);
+    friend std::istream &operator>>(std::istream &is, Project &obj);
 
     void changeFinanciaton(double change);
     void profit();

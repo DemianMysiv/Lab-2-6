@@ -59,7 +59,7 @@ int main() {
 
     std::cout << "Проєктів зараз: " << Project::getTotalProjects() << std::endl; 
  */
-    Department firstDep("MARKETING", 15, 2, "Computers");
+ /*    Department firstDep("MARKETING", 15, 2, "Computers");
     Department secondDep("SALES", 20, 3, "Phones");
 
     firstDep.display();
@@ -69,7 +69,16 @@ int main() {
     lowerDep.display();
 
     Department megaDep = firstDep + secondDep;
-    megaDep.display();
+    megaDep.display(); */
+
+    Project myProject;
+    
+    // Тестуємо stream extraction (>>)
+    std::cin >> myProject; 
+    
+    // Тестуємо stream insertion (<<)
+    std::cout << "\nВи ввели такий проєкт:\n";
+    std::cout << myProject;
 
     return 0;
 }

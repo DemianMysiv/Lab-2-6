@@ -55,3 +55,36 @@ void Project::assignManager(Employee manager) {
     manager.showProfile(); // Клас Project викликає метод класу Employee!
     cout << "**************************************\n" << endl;
 }
+
+// Stream insertion operator (<<)
+std::ostream &operator<<(std::ostream &os, const Project &obj) {
+    // Виводимо дані проєкту у потік.
+    os << "Проєкт: " << obj.title 
+       << " | Бюджет: " << obj.budget 
+       << " | Тривалість: " << obj.durationweeks 
+       << " | Статус: " << obj.isActive << std::endl;
+    return os;
+}
+
+// Stream extraction operator (>>)
+std::istream &operator>>(std::istream &is, Project &obj) {
+    // 1. Виділяємо буфер, як у лекційному прикладі
+    char *buff = new char[1000];
+    double tempBudget;
+    int tempDuration;
+    bool tempStatus;
+
+    cout << "Введіть назву, бюджет, тижні та статус (1/0) через пробіл: ";
+    
+    // 2. Зчитуємо дані з консолі
+    is >> buff >> tempBudget >> tempDuration >> tempStatus;
+    
+    // 3. Створюємо новий об'єкт і присвоюємо його поточному.
+    obj = Project{buff, tempBudget, tempDuration, tempStatus};
+    
+    // 4. Обов'язково очищаємо динамічну пам'ять!
+    delete[] buff;
+    
+    // 5. Повертаємо потік
+    return is;
+}
