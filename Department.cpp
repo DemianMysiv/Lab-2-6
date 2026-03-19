@@ -1,4 +1,5 @@
 #include "Department.h"
+#include "Manager.h"
 #include <cstring>
 #include <cctype>
 
@@ -11,13 +12,13 @@ Department::Department(const char* name, int count) : Department(name, count, 1,
 Department::Department(const char* name, int count, int fl) : Department(name, count, fl, "Standard") {}
 
 Department::Department(const char* name, int count, int fl, string res) 
-    : employeecount{ count }, floor{ fl }, resources{ res } {
+    : employeecount{ count }, floor{ fl }, resources{ res }, departmentHead{ nullptr } {
     deptName = new char[std::strlen(name) + 1];
     std::strcpy(deptName, name);
 }
 
 Department::Department(const Department& other) 
-    : employeecount{ other.employeecount }, floor{ other.floor }, resources{ other.resources } {
+    : employeecount{ other.employeecount }, floor{ other.floor }, resources{ other.resources }, departmentHead{ other.departmentHead } {
     deptName = new char[std::strlen(other.deptName) + 1];
     std::strcpy(deptName, other.deptName);
 }
@@ -63,5 +64,28 @@ void Department::setResources(string newResources) {
 
 void Department::display() const {
     cout << "Відділ: " << deptName << " | Працівників: " << employeecount 
-         << " | Поверх: " << floor << " | Ресурси: " << resources << endl;
+         << " | Поверх: " << floor << " | Ресурси: " << resources;
+    
+    if (departmentHead != nullptr) {
+        cout << " | [Керівник призначений]";
+    } else {
+        cout << " | [Без керівника]";
+    }
+    cout << endl;
+}
+
+
+
+
+void Department::assignManager(Manager* newManager) {
+    departmentHead = newManager;
+    cout << "Відділу '" << deptName << "' успішно призначено нового керівника." << endl;
+}
+
+void Department::showDepartmentHead() const {
+    if (departmentHead != nullptr) {
+        cout << "Керівник відділу '" << deptName << "' на місці." << endl;
+    } else {
+        cout << "У відділі '" << deptName << "' наразі немає керівника!" << endl;
+    }
 }

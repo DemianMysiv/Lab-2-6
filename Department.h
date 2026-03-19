@@ -3,12 +3,17 @@
 #include <iostream>
 #include <string>
 
+class Manager; 
+
 class Department {
 private:
     char* deptName;
     int employeecount;
     int floor;
     std::string resources;
+
+    // "Has-a"
+    Manager* departmentHead;
 
 public:
     Department();
@@ -25,4 +30,7 @@ public:
     void hireEmployee(int addedcount);
     void setResources(std::string newResources);
     void display() const;
+
+    void assignManager(Manager* newManager);
+    void showDepartmentHead() const;
 };
