@@ -50,7 +50,7 @@ Employee::Employee(Employee&& other) noexcept
     
     salary = other.salary; // "Крадемо" вказівник
     
-    // Обнуляємо дані у тимчасовому об'єкті
+    // Зануляємо
     other.salary = nullptr;
     other.idcardnumber = 0;
 
