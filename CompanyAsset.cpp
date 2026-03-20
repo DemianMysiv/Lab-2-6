@@ -1,8 +1,16 @@
 #include "CompanyAsset.h"
+#include <iostream>
 
 // Ініціалізуємо приватні поля через список ініціалізації
 CompanyAsset::CompanyAsset(std::string id, double cost, int year)
-    : assetID(id), purchaseCost(cost), purchaseYear(year) {}
+    : assetID(id), purchaseCost(cost), purchaseYear(year) {
+    std::cout << "Викликано конструктор для CompanyAsset з ID: " << assetID << std::endl;
+    }
+
+CompanyAsset::~CompanyAsset() {
+    std::cout << "Викликано деструктор для CompanyAsset" << std::endl;
+}
+
 
 // Реалізація геттерів
 std::string CompanyAsset::getAssetID() const { 

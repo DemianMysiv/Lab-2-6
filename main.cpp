@@ -48,9 +48,9 @@ int main() {
     emp1.WhoisthisP(emp2);
   */
 
-/*     const Employee boss{"Віктор Петрович", 1, 50000.0, "Генеральний директор"};
+     const Employee boss{"Віктор Петрович", 1, 50000.0, "Генеральний директор"};
     boss.showProfile();
-    std::cout << "Зарплата: " << boss.getSalary() << std::endl; */
+    std::cout << "Зарплата: " << boss.getSalary() << std::endl; 
 
 /*     std::cout << "Проєктів на старті: " << Project::getTotalProjects() << std::endl; 
 

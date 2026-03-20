@@ -10,6 +10,7 @@ private:
 public:
     // Конструктор
     Vehicle(std::string id, double cost, int year, std::string plate, int startMileage);
+    ~Vehicle();
 
     // Специфічні методи автомобіля
     void addMileage(int km);

@@ -7,7 +7,8 @@ private:
     std::string githubProfile;
 
 public:
-
+    Developer(std::string fullName, int idcardnumber, double salaryvalue, std::string position, std::string language, std::string github);
+    ~Developer();
     void writeCode() const;
     void debugCode() const;
     void sendCommit() const;

@@ -10,7 +10,7 @@ private:
 public:
     // Конструктор
     RealEstate(std::string id, double cost, int year, std::string addressLoc, double sqMeters);
-
+    ~RealEstate();
     // Специфічні методи нерухомості
     double calculateUtilityCost() const;
     void renovate() const;

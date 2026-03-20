@@ -3,7 +3,13 @@
 
 // Делегуємо базові дані конструктору CompanyAsset, свої поля ініціалізуємо самі
 Vehicle::Vehicle(std::string id, double cost, int year, std::string plate, int startMileage)
-    : CompanyAsset(id, cost, year), licensePlate(plate), mileage(startMileage) {}
+    : CompanyAsset(id, cost, year), licensePlate(plate), mileage(startMileage) {
+        std::cout << "Vehicle Конструктор" << std::endl;
+    }
+
+Vehicle::~Vehicle() {
+    std::cout << "Викликано деструктор для Vehicle" << std::endl;
+}  
 
 // Додаємо пробіг
 void Vehicle::addMileage(int km) {

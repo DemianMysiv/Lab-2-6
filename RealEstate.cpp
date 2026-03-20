@@ -3,7 +3,13 @@
 
 // Передаємо дані "вгору" до батька
 RealEstate::RealEstate(std::string id, double cost, int year, std::string addressLoc, double sqMeters)
-    : CompanyAsset(id, cost, year), address(addressLoc), squareMeters(sqMeters) {}
+    : CompanyAsset(id, cost, year), address(addressLoc), squareMeters(sqMeters) {
+        std::cout<<"RealEstate Конструктор"<<std::endl;
+    }
+
+RealEstate::~RealEstate() {
+    std::cout << "Викликано деструктор для RealEstate" << std::endl;
+}
 
 // Розрахунок комунальних послуг (наприклад, $50 за квадратний метр)
 double RealEstate::calculateUtilityCost() const {
