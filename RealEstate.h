@@ -22,6 +22,6 @@ public:
     void renovate() const;
     void displayEstateInfo() const;
 
-    virtual double  calculateMaintenanceCosts() const;
+    virtual double  calculateMaintenanceCosts() const override;
 
 };

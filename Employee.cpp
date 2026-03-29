@@ -77,7 +77,7 @@ void Employee::showneededinfo() const {
 }
 
 double Employee::calculateAnnualBonus() const {
-    std::cout << "Розрахунок стандартного річного бонусу для працівника." << std::endl;
+    std::cout << "Розрахунок стандартного річного бонусу для працівника." << getSalary() * 0.05<< std::endl;
     return getSalary() * 0.05;
 }
 

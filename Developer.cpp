@@ -28,6 +28,6 @@ void Developer::sendCommit() const {
 }
 
 double Developer::calculateAnnualBonus() const {
-    std::cout << "Розрахунок бонусу розробника." << std::endl;
+    std::cout << "Розрахунок бонусу розробника." << getSalary() * 0.08 + 300.0 << std::endl;
     return getSalary() * 0.08 + 300.0;
 }

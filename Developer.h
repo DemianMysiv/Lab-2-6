@@ -12,6 +12,6 @@ public:
     void writeCode() const;
     void debugCode() const;
     void sendCommit() const;
-    double calculateAnnualBonus() const;
+    double calculateAnnualBonus() const override;
 
 };

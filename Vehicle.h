@@ -17,5 +17,5 @@ public:
     bool needsMaintenance() const;
     void displayVehicleInfo() const;
 
-    virtual double  calculateMaintenanceCosts() const;
+    virtual double  calculateMaintenanceCosts() const override;
 };

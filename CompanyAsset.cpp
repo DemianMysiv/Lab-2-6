@@ -37,6 +37,6 @@ double CompanyAsset::calculateDepreciation(int currentYear) const {
 
 double CompanyAsset::calculateMaintenanceCosts() const {
     // Припустимо, що щорічні витрати на обслуговування складають 5% від вартості при покупці
-    std::cout << "Розрахунок приблизних витрат на обслуговування для активу." << std::endl;
+    std::cout << "Розрахунок приблизних витрат на обслуговування для активу." << purchaseCost * 0.05 << std::endl;
     return purchaseCost * 0.05;
 }
