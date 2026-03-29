@@ -1,7 +1,7 @@
 #include "Employee.h"
 #include <string>
 
-class Developer : public Employee {
+class Developer final : public Employee {
 private:
     std::string programmingLanguage;
     std::string githubProfile;
