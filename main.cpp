@@ -9,6 +9,8 @@
 #include "Manager.h"
 #include "RealEstate.h"
 #include "Vehicle.h"
+#include "CodingTask.h"
+#include "ProjectTask.h"
 
 
 void showinformation(const Employee &emp) {
@@ -83,6 +85,17 @@ int main() {
     printBonus(*pEduard);
     delete pEduard;
     
+    // ProjectTask task("Error", 5);        // Помилка! Абстрактний клас
+    // ProjectTask* p = new ProjectTask();  // Помилка! Абстрактний клас
+
+    ProjectTask* task = new CodingTask("Fix Bug", 5, 2);
+
+    std::cout << "Task: " << task->getTitle() << std::endl;
+    std::cout << "Priority: " << task->calculatePriority() << std::endl;
+
+    delete task;
+
+
 /*     delete emp;
     delete boss;
     delete dev;
