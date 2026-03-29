@@ -15,6 +15,11 @@ void showinformation(const Employee &emp) {
     emp.showneededinfo();
 }
 
+void printBonus(const Employee &e) {
+    std::cout << "Нарахований бонус: " << e.calculateAnnualBonus() << " USD\n";
+}
+
+
 void Financing(const CompanyAsset& asset) {
     std::cout << asset.calculateMaintenanceCosts() << std::endl;
 }
@@ -25,7 +30,7 @@ void PayBonus(const Employee& emp) {
 int main() {
     SetConsoleOutputCP(CP_UTF8);
 
-    Employee emp1("Іван Іванов", 12345, 50000.0, "Розробник");
+/*     Employee emp1("Іван Іванов", 12345, 50000.0, "Розробник");
     Manager boss1("Олексій", 777, 4500.50, 12, "IT", "Senior Manager");
     showinformation(emp1);
     showinformation(boss1);
@@ -52,16 +57,40 @@ int main() {
 
 
     std::cout << std::endl; 
+ */
+
+    //6 ЗАВДАННЯ
     
+    Employee Pavlo("Павло", 101, 40000.0, "QA Engineer");
+    const Employee &rPavlo = Pavlo;
+    std::cout << "Бонус: " << rPavlo.calculateAnnualBonus() << " USD\n";
+
+    Manager Demian("Дем'ян", 102, 85000.0, 4, "Pixel Point", "CEO");
+    const Employee &rDemian = Demian;
+    std::cout << "Бонус: " << rDemian.calculateAnnualBonus() << " USD\n";
+
+    std::cout << std::endl;
+
+    Employee Yaroslav("Ярослав", 103, 45000.0, "UX/UI Designer");
+    Developer Vlad("Влад", 104, 70000.0, "Fullstack", "JS", "https://github.com/vlad");
+
+    printBonus(Yaroslav);
+    printBonus(Vlad);
+
+    std::cout << std::endl;
+
+    Employee *pEduard = new Developer("Едуард", 105, 75000.0, "Lead", "C++", "https://github.com/eduard");
+    printBonus(*pEduard);
+    delete pEduard;
     
-    delete emp;
+/*     delete emp;
     delete boss;
     delete dev;
 
     delete asset;
     delete car;
     delete office;
-    
+     */
     return 0;
 
 
