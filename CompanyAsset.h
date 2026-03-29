@@ -19,4 +19,8 @@ public:
 
     // Метод для розрахунку знецінення
     double calculateDepreciation(int currentYear) const;
+
+        // Метод для розрахунку витрат на технічне обслуговування
+    virtual double calculateMaintenanceCosts() const;
+
 };

@@ -53,3 +53,16 @@ void RealEstate::displayEstateInfo() const {
               << "Адреса: " << address << " | Площа: " << squareMeters << " кв.м\n"
               << "Вартість при покупці: $" << getPurchaseCost() << " | Рік: " << getPurchaseYear() << "\n";
 }
+
+double RealEstate::calculateMaintenanceCosts() const{
+    // Припустимо, що витрати на обслуговування залежать від площі
+
+    std::cout << "Розрахунок витрат на обслуговування для нерухомості з площею: " << squareMeters << " кв.м" << std::endl;
+    if (squareMeters < 50) {
+        return 200.0; // Легке обслуговування
+    } else if (squareMeters < 150) {
+        return 500.0; // Середнє обслуговування
+    } else {
+        return 1000.0; // Повне обслуговування
+    }
+}

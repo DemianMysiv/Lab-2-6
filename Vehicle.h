@@ -16,4 +16,6 @@ public:
     void addMileage(int km);
     bool needsMaintenance() const;
     void displayVehicleInfo() const;
+
+    virtual double  calculateMaintenanceCosts() const;
 };

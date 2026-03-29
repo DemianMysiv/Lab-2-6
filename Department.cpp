@@ -27,6 +27,8 @@ Department::~Department() {
     delete[] deptName;
 }
 
+
+
 Department Department::operator-() const {
     char *buff = new char[std::strlen(this->deptName) + 1];
     std::strcpy(buff, this->deptName);
@@ -47,6 +49,8 @@ Department Department::operator+(const Department &rhs) const {
     delete[] buff;
     return temp;
 }
+
+
 
 void Department::relocate(int newfloor) {
     floor = newfloor;
@@ -73,9 +77,6 @@ void Department::display() const {
     }
     cout << endl;
 }
-
-
-
 
 void Department::assignManager(Manager* newManager) {
     departmentHead = newManager;
