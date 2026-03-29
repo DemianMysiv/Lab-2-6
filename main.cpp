@@ -15,8 +15,13 @@ void showinformation(const Employee &emp) {
     emp.showneededinfo();
 }
 
+
+
 void Financing(const CompanyAsset& asset) {
     std::cout << asset.calculateMaintenanceCosts() << std::endl;
+}
+void PayBonus(const Employee& emp) {
+    std::cout << "Нараховано бонус: " << emp.calculateAnnualBonus() << " USD\n" << std::endl;
 }
 
 int main() {
@@ -24,8 +29,10 @@ int main() {
 
     Employee emp1("Іван Іванов", 12345, 50000.0, "Розробник");
     Manager boss("Олексій", 777, 4500.50, 12, "IT", "Senior Manager");
+    Developer dev("Микола", 111, 60000.0, "Junior Developer", "C++", "https://github.com/nikolay");
     showinformation(emp1);
     showinformation(boss);
+
 
     std::cout << std::endl;
 
@@ -35,6 +42,12 @@ int main() {
     Financing(asset);
     Financing(car);
     Financing(office);
+
+    std::cout << std::endl;
+
+    PayBonus(emp1);
+    PayBonus(boss); 
+    PayBonus(dev);  
 
 
 }

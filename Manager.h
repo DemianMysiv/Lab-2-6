@@ -12,4 +12,5 @@ public:
     void addTeamMember();
     void conductMeeting() const;
     void showneededinfo() const;
+    double calculateAnnualBonus() const;
 };

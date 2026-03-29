@@ -26,3 +26,8 @@ void Developer::debugCode() const {
 void Developer::sendCommit() const {
     std::cout << "Sending commit, using Git: " << githubProfile << std::endl;
 }
+
+double Developer::calculateAnnualBonus() const {
+    std::cout << "Розрахунок бонусу розробника." << std::endl;
+    return getSalary() * 0.08 + 300.0;
+}

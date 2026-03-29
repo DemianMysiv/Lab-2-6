@@ -24,7 +24,9 @@ public:
     void updateSalary(double bonus);
 
     void showneededinfo() const;
-    
+
+    virtual double calculateAnnualBonus() const;
+
     double getSalary() const;
     int WhoisthisP(const Employee &other);
     

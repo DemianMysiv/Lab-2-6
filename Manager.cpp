@@ -26,3 +26,8 @@ void Manager::showneededinfo()const{
 
     
 }
+
+double Manager::calculateAnnualBonus() const {
+    std::cout << "Розрахунок бонусу менеджера з урахуванням команди (" << teamSize << " осіб)." << std::endl;
+    return getSalary() * 0.10 + (teamSize * 50.0);
+}

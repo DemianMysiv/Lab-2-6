@@ -76,6 +76,11 @@ void Employee::showneededinfo() const {
     cout << "Співробітник: " << fullName << ", Посада: " << position << endl;
 }
 
+double Employee::calculateAnnualBonus() const {
+    std::cout << "Розрахунок стандартного річного бонусу для працівника." << std::endl;
+    return getSalary() * 0.05;
+}
+
 double Employee::getSalary() const {
     return *salary;
 }
