@@ -71,7 +71,8 @@ void Employee::updateSalary(double bonus) {
 }
 
 
-void Employee::showProfile() const {
+void Employee::showneededinfo() const {
+    cout << "Ось загальна інформація про співробітника: " << endl;
     cout << "Співробітник: " << fullName << ", Посада: " << position << endl;
 }
 

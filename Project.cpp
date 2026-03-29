@@ -52,7 +52,7 @@ void Project::getStatusOfProject() {
 void Project::assignManager(Employee manager) {
     cout << "\n*** Призначення на проєкт: " << title << " ***" << endl;
     cout << "Керівник проєкту:" << endl;
-    manager.showProfile(); // Клас Project викликає метод класу Employee!
+    manager.showneededinfo(); // Клас Project викликає метод класу Employee!
     cout << "**************************************\n" << endl;
 }
 

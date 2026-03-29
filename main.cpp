@@ -4,81 +4,19 @@
 #include "Department.h"
 #include <windows.h>
 #include <vector>
+#include "Developer.h"
+#include "CompanyAsset.h"
+#include "Manager.h"
 
-
+void showinformation(const Employee &emp) {
+    emp.showneededinfo();
+}
 
 int main() {
     SetConsoleOutputCP(CP_UTF8);
+    Employee emp1("Іван Іванов", 12345, 50000.0, "Розробник");
+    Manager boss("Олексій", 777, 4500.50, 12, "IT", "Senior Manager");
+    showinformation(emp1);
+    showinformation(boss);
 
-/*     Employee emp1("ZhalobaEduard");
-    Employee emp2("DemyanMysiv", 797, 1000, "boss");
-
-    emp1.showProfile();
-    emp2.showProfile();  */
-
-/*     Employee emp{"Іван Мельник", 101, 15000.5, "Менеджер"};
-    std::cout << "Зарплата першого співробітника: " << emp.getSalary() << std::endl;
-
-    std::vector<Employee> vectorOfEmployees(1, emp);
-
-    vectorOfEmployees.emplace_back("Петро Петренко", 102, 12000.0, "Розробник");
-    vectorOfEmployees.push_back(Employee{"Олена Коваленко", 103, 16000.0, "Дизайнер"});
-    vectorOfEmployees.push_back(Employee{"Сергій Сидоренко", 104, 14000.0, "Аналітик"});
-    vectorOfEmployees.push_back(Employee{"Марія Мельник", 105, 17000.0, "Керівник"});
-    vectorOfEmployees.push_back(Employee{"Олексій Бондар", 106, 13000.0, "Тестувальник"});  */
-
-/*      Department dep1;
-    Department dep2("buchalteria", 100);
-
-    dep1.hireEmployee(50);
-    dep2.hireEmployee(50);
-
-    Project prj1;
-
-    prj1.getStatusOfProject();
-    Project prj2(prj1); 
-    prj2.getStatusOfProject();   */
-
-
-
-/*     Employee emp1{"Іван Мельник", 101, 15000.0, "Менеджер"};
-    Employee emp2{"Петро Петренко", 102, 12000.0, "Розробник"};
-
-
-    emp1.WhoisthisP(emp2);
-  */
-
-     const Employee boss{"Віктор Петрович", 1, 50000.0, "Генеральний директор"};
-    boss.showProfile();
-    std::cout << "Зарплата: " << boss.getSalary() << std::endl; 
-
-/*     std::cout << "Проєктів на старті: " << Project::getTotalProjects() << std::endl; 
-
-    Project p1("Альфа", 10000, 10, true);
-    Project p2("Бета", 5000);
-
-    std::cout << "Проєктів зараз: " << Project::getTotalProjects() << std::endl; 
- */
- /*    Department firstDep("MARKETING", 15, 2, "Computers");
-    Department secondDep("SALES", 20, 3, "Phones");
-
-    firstDep.display();
-    secondDep.display();
-
-    Department lowerDep = -firstDep;
-    lowerDep.display();
-
-    Department megaDep = firstDep + secondDep;
-    megaDep.display(); */
-
-    Project myProject;
-    
-    // Тестуємо stream extraction (>>)
-    std::cin >> myProject; 
-    
-    // Тестуємо stream insertion (<<)
-    std::cout << "\nВи ввели такий проєкт:\n";
-    std::cout << myProject;
-
-    return 0;
 }

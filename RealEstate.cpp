@@ -19,6 +19,7 @@ RealEstate::RealEstate(RealEstate&& other) noexcept
       address(std::move(other.address)), 
       squareMeters(std::move(other.squareMeters)) 
 {
+    other.squareMeters = 0;
     std::cout << "Викликано RealEstate Move Constructor\n";
 }
 

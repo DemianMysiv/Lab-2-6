@@ -7,8 +7,9 @@ private:
     std::string department;
 
 public:
-    Manager(std::string id, double salary, int team, std::string dept);
+    Manager(std::string Name, int id, double salary, int team, std::string dept, std::string position);
     ~Manager();
     void addTeamMember();
     void conductMeeting() const;
+    void showneededinfo() const;
 };
