@@ -18,7 +18,7 @@ public:
     Employee(std::string fullName, int idcardnumber, double salaryvalue, std::string position);
     Employee(const Employee &other);
     Employee(Employee&& other) noexcept;
-    ~Employee();
+    virtual ~Employee();
 
     void promote(std::string newPosition);
     void updateSalary(double bonus);

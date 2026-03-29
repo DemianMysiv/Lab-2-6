@@ -10,7 +10,7 @@ private:
 public:
     // Конструктор
     CompanyAsset(std::string id, double cost, int year);
-    ~CompanyAsset();
+    virtual ~CompanyAsset();
 
     // Геттери для доступу до приватних полів
     std::string getAssetID() const;
