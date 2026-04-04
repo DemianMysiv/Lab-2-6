@@ -4,7 +4,7 @@
 #include <string>
 #include "Employee.h"
 
-class Project {
+class Project : public IDisplayable{
 private:
     std::string title;
     double budget;
@@ -20,6 +20,9 @@ public:
     ~Project();
     friend std::ostream &operator<<(std::ostream &os, const Project &obj);
     friend std::istream &operator>>(std::istream &is, Project &obj);
+
+
+    void display() const override;
 
     void changeFinanciaton(double change);
     void profit();

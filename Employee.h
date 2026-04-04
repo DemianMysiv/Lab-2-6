@@ -1,8 +1,9 @@
 #pragma once
 #include <string>
 #include <iostream>
+#include "IDisplayable.h"
 
-class Employee {
+class Employee : public IDisplayable {
 private:
     std::string fullName;
     int idcardnumber;
@@ -17,17 +18,18 @@ public:
     Employee(std::string fullName, int idcardnumber, double salaryvalue, std::string position);
     Employee(const Employee &other);
     Employee(Employee&& other) noexcept;
+
     virtual ~Employee();
 
     void promote(std::string newPosition);
     void updateSalary(double bonus);
-
-    void showneededinfo() const;
+    void showneededinfo();
 
     virtual double calculateAnnualBonus() const;
 
     double getSalary() const;
     int WhoisthisP(const Employee &other);
+    void display() const override;
     
 
 };

@@ -20,7 +20,7 @@ void Manager::conductMeeting() const {
     std::cout << "Проведення зустрічі для відділу " << department << std::endl;
 }
 
-void Manager::showneededinfo()const{
+void Manager::showneededinfo() const {
     std::cout<< "Ось додаткова інформація про менеджера: " << std::endl;
     std::cout << "Менеджер: " << getSalary() << ", Розмір команди: " << teamSize << ", Відділ: " << department << std::endl;
 

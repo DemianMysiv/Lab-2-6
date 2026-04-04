@@ -88,3 +88,8 @@ std::istream &operator>>(std::istream &is, Project &obj) {
     // 5. Повертаємо потік
     return is;
 }
+
+
+void Project::display() const {
+        std::cout << "[Проєкт]: " << title << std::endl;
+    }

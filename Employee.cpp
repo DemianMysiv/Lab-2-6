@@ -1,5 +1,6 @@
 #include "Employee.h"
 
+
 using namespace std;
 
 Employee::Employee() : fullName(""), idcardnumber(0), position("") {
@@ -71,7 +72,7 @@ void Employee::updateSalary(double bonus) {
 }
 
 
-void Employee::showneededinfo() const {
+void Employee::showneededinfo() {
     cout << "Ось загальна інформація про співробітника: " << endl;
     cout << "Співробітник: " << fullName << ", Посада: " << position << endl;
 }
@@ -94,3 +95,8 @@ int Employee::WhoisthisP(const Employee &other) {
     }
     return 0;
 }
+
+
+void Employee::display() const {
+        std::cout << "[Працівник]: " << fullName << std::endl;
+    }
