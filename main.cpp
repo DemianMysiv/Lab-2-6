@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 #include <windows.h>
 
 void userMenu() {
@@ -14,6 +15,8 @@ int main() {
     SetConsoleCP(CP_UTF8);
 
     int role;
+    const std::string ADMIN_PASS = "1234";
+
     do {
         std::cout << "\n=== ВИБІР РОЛІ ===\n";
         std::cout << "1. Адміністратор\n";
@@ -23,9 +26,18 @@ int main() {
         std::cin >> role;
 
         switch(role) {
-            case 1: 
-                adminMenu(); 
+            case 1: {
+                std::string inputPass;
+                std::cout << "Введіть пароль: ";
+                std::cin >> inputPass;
+                
+                if (inputPass == ADMIN_PASS) {
+                    adminMenu(); 
+                } else {
+                    std::cout << "Відмова в доступі! Невірний пароль!\n";
+                }
                 break;
+            }
             case 2: 
                 userMenu(); 
                 break;
