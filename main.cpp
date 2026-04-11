@@ -8,6 +8,14 @@
 #include "Employee.h"
 #include "Project.h"
 
+void logAction(const std::string& action) {
+    std::ofstream logFile("history.txt", std::ios::app);
+    if (logFile.is_open()) {
+        logFile << action << "\n";
+        logFile.close();
+    }
+}
+
 void saveToFile(const std::vector<std::unique_ptr<IDisplayable>>& data) {
     std::ofstream file("database.txt");
     for (size_t i = 0; i < data.size(); i++) {
@@ -48,18 +56,21 @@ void viewDashboard(const std::vector<std::unique_ptr<IDisplayable>>& data) {
 
 void userMenu(const std::vector<std::unique_ptr<IDisplayable>>& data) {
     int choice;
+    logAction("Успішний вхід: Користувач");
     do {
         std::cout << "\n--- МЕНЮ КОРИСТУВАЧА ---\n";
         std::cout << "1. Переглянути Дашборд\n0. Вихід\nДія: ";
         std::cin >> choice;
         if (choice == 1) {
             viewDashboard(data);
+            logAction("Користувач переглянув дашборд");
         }
     } while(choice != 0);
 }
 
 void adminMenu(std::vector<std::unique_ptr<IDisplayable>>& data) {
     int choice;
+    logAction("Успішний вхід: Адміністратор");
     do {
         std::cout << "\n--- МЕНЮ АДМІНІСТРАТОРА ---\n";
         std::cout << "1. Переглянути Дашборд\n2. ДОДАТИ працівника\n3. ДОДАТИ проєкт\n0. Вихід\nДія: ";
@@ -67,12 +78,14 @@ void adminMenu(std::vector<std::unique_ptr<IDisplayable>>& data) {
 
         if (choice == 1) {
             viewDashboard(data);
+            logAction("Адміністратор переглянув дашборд");
         } else if (choice == 2) {
             std::string name;
             std::cout << "Ім'я: "; 
             std::cin >> name;
             data.push_back(std::make_unique<Employee>(name));
             saveToFile(data);
+            logAction("Додано працівника: " + name);
             std::cout << "Працівника додано!\n";
         } else if (choice == 3) {
             std::string title; 
@@ -83,6 +96,7 @@ void adminMenu(std::vector<std::unique_ptr<IDisplayable>>& data) {
             std::cin >> d;
             data.push_back(std::make_unique<Project>(title, d));
             saveToFile(data);
+            logAction("Додано проєкт: " + title);
             std::cout << "Проєкт додано!\n";
         }
     } while(choice != 0);
@@ -119,6 +133,7 @@ int main() {
                     adminMenu(companyData); 
                 } else {
                     std::cout << "Відмова в доступі! Невірний пароль!\n";
+                    logAction("Невдала спроба входу адміністратора");
                 }
                 break;
             }
@@ -127,6 +142,7 @@ int main() {
                 break;
             case 0: 
                 std::cout << "Вихід...\n"; 
+                logAction("Програму закрито");
                 break;
             default: 
                 std::cout << "Помилка!\n";

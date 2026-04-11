@@ -15,7 +15,7 @@ private:
 public:
     Project();
     Project(std::string nazva, double koshty, int duration, bool status);
-    Project(std::string zagolovok, double moneycount);
+    Project(std::string zagolovok, int d);
     Project(const Project& other);
     ~Project();
     friend std::ostream &operator<<(std::ostream &os, const Project &obj);
@@ -29,4 +29,6 @@ public:
     void getStatusOfProject();
     void assignManager(Employee manager);
     static int getTotalProjects();
+
+    std::string toFileString() const override;
 };

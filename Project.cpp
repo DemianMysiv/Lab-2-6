@@ -15,8 +15,8 @@ Project::Project(string nazva, double koshty, int duration, bool status)
     cout << "Викликано конструктор з 4 параметрами" << endl;
 }
 
-Project::Project(string zagolovok, double moneycount) 
-    : title{ zagolovok }, budget{ moneycount }, durationweeks{ 5 }, isActive{ true } {
+Project::Project(string zagolovok, int d) 
+    : title{ zagolovok }, budget{ 1000 }, durationweeks{ d }, isActive{ true } {
     totalProjects++;
     cout << "Викликано конструктор з 2 параметрами" << endl;
 }
@@ -93,3 +93,9 @@ std::istream &operator>>(std::istream &is, Project &obj) {
 void Project::display() const {
         std::cout << "[Проєкт]: " << title << std::endl;
     }
+
+std::string Project::toFileString() const {
+    return "Project " + title + " " + std::to_string(durationweeks);
+}
+
+

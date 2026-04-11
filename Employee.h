@@ -29,7 +29,12 @@ public:
 
     double getSalary() const;
     int WhoisthisP(const Employee &other);
+
+    
     void display() const override;
     
 
+    std::string toFileString() const override {
+    return "Employee " + fullName; 
+}
 };
