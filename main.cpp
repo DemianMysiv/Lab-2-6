@@ -1,6 +1,14 @@
 #include <iostream>
 #include <windows.h>
 
+void userMenu() {
+    std::cout << "\n--- МЕНЮ КОРИСТУВАЧА ---\n";
+}
+
+void adminMenu() {
+    std::cout << "\n--- МЕНЮ АДМІНІСТРАТОРА ---\n";
+}
+
 int main() {
     SetConsoleOutputCP(CP_UTF8);
     SetConsoleCP(CP_UTF8);
@@ -15,10 +23,17 @@ int main() {
         std::cin >> role;
 
         switch(role) {
-            case 1: std::cout << "Вхід для адміна...\n"; break;
-            case 2: std::cout << "Вхід для користувача...\n"; break;
-            case 0: std::cout << "Вихід...\n"; break;
-            default: std::cout << "Помилка!\n";
+            case 1: 
+                adminMenu(); 
+                break;
+            case 2: 
+                userMenu(); 
+                break;
+            case 0: 
+                std::cout << "Вихід...\n"; 
+                break;
+            default: 
+                std::cout << "Помилка!\n";
         }
     } while(role != 0);
 
