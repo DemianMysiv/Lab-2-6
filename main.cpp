@@ -95,6 +95,10 @@ int main() {
     std::vector<std::unique_ptr<IDisplayable>> companyData;
     loadFromFile(companyData);
 
+    if (!companyData.empty()) {
+        std::cout << "[Система] Успішно відновлено " << companyData.size() << " записів з бази даних.\n";
+    }
+
     int role;
     const std::string ADMIN_PASS = "1234";
 
